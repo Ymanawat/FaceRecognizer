@@ -60,12 +60,7 @@ def recognize_face():
     status_label.config(text="")
 
 # Function to list available faces
-def list_available_faces():
-    # Disable buttons and update status label
-    add_faces_button.config(state=tk.DISABLED)
-    recognize_face_button.config(state=tk.DISABLED)
-    list_faces_button.config(state=tk.DISABLED)
-    
+def list_available_faces():    
     available_faces = subprocess.run(["python", "list_faces.py"], capture_output=True, text=True)
     # Create a new window to display the available faces list
     result_window = tk.Toplevel(root)
